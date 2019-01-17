@@ -22,7 +22,7 @@ importDataAndInsertToMongo <- function() {
 #importDataAndInsertToMongo()
 
 # Setup deeplearning model(Keras NN)
-#dl.setup()
+dl.setup()
 
 # Define server logic required to draw a histogram
 # Run the application 

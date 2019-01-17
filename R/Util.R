@@ -8,7 +8,9 @@ getTermMatrix <- memoise(function(txts) {
   myCorpus = tm_map(myCorpus, removePunctuation)
   myCorpus = tm_map(myCorpus, removeNumbers)
   myCorpus = tm_map(myCorpus, removeWords,
-                    c(stopwords("SMART"), "thy", "thou", "thee", "the", "and", "but"))
+                    #we get rid of the terms positive and negative because they're too common in the "No negative" reviews
+                    #we also get rid of "hotel" because it's too common. 
+                    c(stopwords("SMART"), "thy", "thou", "thee", "the", "and", "but", "hotel", "positive", "negative"))
   
   myDTM = TermDocumentMatrix(myCorpus,
                              control = list(minWordLength = 1))

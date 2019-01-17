@@ -4,7 +4,7 @@ shiny.dashboardBody <- fluidRow(
        box(
          title="Reviewer Score Frequencies",
          plotlyOutput("freqScorePlot"),
-         height=450),
+         height=430),
        height = 700
   ),
  column(12,
@@ -19,7 +19,7 @@ shiny.dashboardBody <- fluidRow(
                       c("Show all", "positive", "negative"),
                       selected="Show all"),
           sliderInput("minScoreFilter", "Minimum Review Score", step=0.1, min=0, max=10, value=0),
-          sliderInput("minFreqWordcloudFilter", "Minimum Word Freq in WordCloud", step=1, min=1, max=20, value=2),
+          sliderInput("minFreqWordcloudFilter", "Minimum Word Freq in WordCloud", step=1, min=1, max=20, value=5),
           sliderInput("maxWordsWordcloudFilter", "Maximum Words in WordCloud", min=0, max=200, value=100)
         ),
         height = 700
